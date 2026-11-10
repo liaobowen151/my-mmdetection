@@ -1,0 +1,420 @@
+{
+  "status": "visualization_preview_only_not_applied_to_source_annotations",
+  "assumptions": [
+    "For test:1573, the phrase 'the bounding box on the right side of the image' is interpreted as 'the person on the right side of the image' because the visible target at the right edge is a person."
+  ],
+  "revisions": {
+    "test:64": {"proposed_text": "The car parked on the right side of the road"},
+    "test:88": {
+      "proposed_text": "The person riding the bicycle",
+      "bbox_xyxy": [466, 172, 602, 405]
+    },
+    "test:158": {"proposed_text": "The bicycle parked to the left of the car"},
+    "test:204": {
+      "proposed_text": "The person riding the bicycle",
+      "bbox_xyxy": [410, 187, 503, 354]
+    },
+    "test:263": {
+      "proposed_text": "The person riding the bicycle",
+      "bbox_xyxy": [370, 216, 393, 291]
+    },
+    "test:316": {
+      "proposed_text": "The person riding the bicycle",
+      "bbox_xyxy": [446, 211, 477, 302]
+    },
+    "test:340": {
+      "proposed_text": "The person riding the black bicycle",
+      "bbox_xyxy": [354, 179, 433, 316]
+    },
+    "test:368": {
+      "proposed_text": "The person wearing black shorts on the left side of the image",
+      "bbox_xyxy": [108, 215, 133, 288]
+    },
+    "test:567": {"proposed_text": "The last bicycle"},
+    "test:594": {"proposed_text": "A bicycle in motion"},
+    "test:646": {"proposed_text": "The bicycle being ridden by the person in white"},
+    "test:890": {
+      "proposed_text": "The red compact car",
+      "bbox_xyxy": [157, 218, 212, 268]
+    },
+    "test:898": {"proposed_text": "The bicycle on the right side of the road"},
+    "test:1018": {
+      "proposed_text": "The person riding the bicycle",
+      "bbox_xyxy": [527, 151, 623, 401]
+    },
+    "test:1130": {"proposed_text": "The bicycle in motion"},
+    "test:1474": {"proposed_text": "The bicycle being ridden"},
+    "test:1536": {
+      "proposed_text": "The car with only its rear visible",
+      "bbox_xyxy": [246, 213, 313, 276]
+    },
+    "test:1573": {
+      "proposed_text": "The person on the right side of the image",
+      "bbox_xyxy": [530, 135, 640, 470],
+      "inferred_from_ambiguous_user_description": true
+    },
+    "test:1595": {
+      "proposed_text": "The bicycle in the center of the image",
+      "bbox_xyxy": [251, 230, 328, 299]
+    },
+    "test:1688": {"proposed_text": "The rightmost bicycle in the image"},
+    "test:1782": {"proposed_text": "The bicycle being ridden by a person"},
+    "test:1802": {"proposed_text": "The motorcycle occluded by the white car"},
+    "test:2015": {"proposed_text": "The bicycle at the back"},
+    "test:2020": {"proposed_text": "The bicycle on the sidewalk"},
+    "test:2085": {"proposed_text": "The bicycle beside the greenery"},
+    "train:18": {
+      "proposed_text": "The car with its headlights on",
+      "bbox_xyxy": [196, 241, 263, 286]
+    },
+    "train:32": {"proposed_text": "The bicycle next to the traffic light"},
+    "train:202": {"proposed_text": "The bicycle being ridden by a person"},
+    "train:208": {
+      "proposed_text": "The coach bus in the distance",
+      "bbox_xyxy": [249, 205, 273, 232]
+    },
+    "train:274": {"proposed_text": "The bicycle partially occluded by the black SUV"},
+    "train:301": {
+      "proposed_text": "The rightmost person riding a bicycle in the image",
+      "bbox_xyxy": [618, 209, 640, 291]
+    },
+    "train:312": {
+      "proposed_text": "The child wearing a green top",
+      "bbox_xyxy": [158, 181, 210, 277]
+    },
+    "train:418": {
+      "proposed_text": "The car with its door open",
+      "bbox_xyxy": [77, 221, 178, 288]
+    },
+    "train:428": {"proposed_text": "The bicycle in the distance on the road"},
+    "train:435": {
+      "proposed_text": "The rightmost car parked by the roadside",
+      "bbox_xyxy": [578, 228, 640, 286]
+    },
+    "train:518": {"proposed_text": "The bicycle with only its front wheel visible"},
+    "train:529": {
+      "proposed_text": "The white car on the right side of the road with only its rear visible",
+      "bbox_xyxy": [323, 221, 376, 270]
+    },
+    "train:533": {
+      "proposed_text": "The yellow road sign on the right side of the road",
+      "bbox_xyxy": [480, 143, 505, 211]
+    },
+    "train:684": {
+      "proposed_text": "The gray car at the far left side of the road",
+      "bbox_xyxy": [1, 228, 53, 284]
+    },
+    "train:738": {
+      "proposed_text": "The white pickup truck",
+      "bbox_xyxy": [224, 190, 376, 327]
+    },
+    "train:880": {
+      "proposed_text": "The partially occluded red compact car",
+      "bbox_xyxy": [212, 221, 250, 258]
+    },
+    "test:1913": {"proposed_text": "The bicycle on the right side of the image"},
+    "train:912": {"proposed_text": "The bicycle parked next to the silver car"},
+    "train:1114": {
+      "proposed_text": "The bicycle traveling on the road",
+      "bbox_xyxy": [32, 230, 128, 286]
+    },
+    "train:1158": {"proposed_text": "The bicycle traveling beside the black pickup truck"},
+    "train:1644": {
+      "proposed_text": "The bicycle ridden by the person wearing white pants",
+      "bbox_xyxy": [364, 246, 499, 331]
+    },
+    "train:1674": {"proposed_text": "The rightmost bicycle in the image"},
+    "train:1727": {
+      "proposed_text": "The bicycle on the road",
+      "bbox_xyxy": [159, 257, 381, 398]
+    },
+    "train:1738": {"proposed_text": "The bicycle parked beneath the traffic light"},
+    "train:1763": {"proposed_text": "The bicycle traveling on the right side of the road"},
+    "train:1893": {"proposed_text": "The pedestrian on the right side of the road"},
+    "train:1946": {
+      "proposed_text": "The pedestrian on the left side of the image",
+      "bbox_xyxy": [38, 226, 56, 272]
+    },
+    "train:2104": {"proposed_text": "The bicycle being ridden by a person"},
+    "train:2274": {
+      "proposed_text": "The black sedan on the road",
+      "bbox_xyxy": [192, 228, 256, 277]
+    },
+    "train:2297": {
+      "proposed_text": "The pedestrian on the right side of the road",
+      "bbox_xyxy": [529, 212, 563, 310]
+    },
+    "train:2396": {
+      "proposed_text": "The bicycle on the right side of the road",
+      "bbox_xyxy": [463, 250, 590, 325]
+    },
+    "train:2406": {"proposed_text": "The bicycle on the road"},
+    "train:2426": {
+      "proposed_text": "The red compact car to the left of the white truck",
+      "bbox_xyxy": [256, 226, 304, 271]
+    },
+    "train:2439": {
+      "proposed_text": "The person riding the motorcycle",
+      "bbox_xyxy": [204, 227, 226, 257]
+    },
+    "train:2661": {"proposed_text": "The person on the right side of the image"},
+    "train:2684": {
+      "proposed_text": "The bicycle being pushed",
+      "bbox_xyxy": [405, 241, 481, 283]
+    },
+    "train:2713": {
+      "proposed_text": "The second bicycle from the left",
+      "bbox_xyxy": [278, 246, 371, 321]
+    },
+    "train:2729": {
+      "proposed_text": "The bicycle next to the young boy",
+      "bbox_xyxy": [404, 264, 524, 334]
+    },
+    "train:2779": {
+      "proposed_text": "The bicycle ridden by the child wearing a green jacket and a white helmet",
+      "bbox_xyxy": [224, 244, 344, 328]
+    },
+    "train:2787": {
+      "proposed_text": "The rightmost bicycle",
+      "bbox_xyxy": [420, 256, 541, 330]
+    },
+    "train:2862": {
+      "proposed_text": "The rightmost bicycle",
+      "bbox_xyxy": [478, 247, 600, 328]
+    },
+    "train:2894": {
+      "proposed_text": "The red traffic sign",
+      "bbox_xyxy": [481, 158, 508, 191]
+    },
+    "train:2902": {
+      "proposed_text": "The bicycle traveling on the sidewalk on the right"
+    },
+    "train:3011": {
+      "proposed_text": "The bicycle on the sidewalk on the right"
+    },
+    "train:3221": {
+      "proposed_text": "The rightmost bicycle",
+      "bbox_xyxy": [407, 252, 518, 327]
+    },
+    "train:3045": {
+      "proposed_text": "The rightmost bicycle",
+      "bbox_xyxy": [423, 253, 541, 329]
+    },
+    "train:3314": {
+      "proposed_text": "The bicycle on the right side of the image",
+      "bbox_xyxy": [506, 252, 640, 384]
+    },
+    "train:3320": {
+      "proposed_text": "The bicycle in motion"
+    },
+    "train:3377": {
+      "proposed_text": "The bicycle in motion"
+    },
+    "train:3420": {
+      "proposed_text": "The bicycle next to the landscaped area"
+    },
+    "train:3448": {
+      "proposed_text": "The car parked on the right",
+      "bbox_xyxy": [520, 221, 637, 295]
+    },
+    "train:3454": {
+      "proposed_text": "The bicycle in motion",
+      "bbox_xyxy": [424, 251, 562, 350]
+    },
+    "train:3488": {
+      "proposed_text": "The second bicycle from the right",
+      "bbox_xyxy": [304, 246, 425, 337]
+    },
+    "train:3504": {
+      "proposed_text": "The bicycle traveling on the right side of the road"
+    },
+    "train:3541": {
+      "proposed_text": "The rightmost person riding a bicycle",
+      "bbox_xyxy": [585, 190, 639, 325]
+    },
+    "train:3596": {
+      "proposed_text": "The bicycle ridden by the person wearing a blue helmet",
+      "bbox_xyxy": [385, 255, 523, 342]
+    },
+    "train:3772": {
+      "proposed_text": "The bicycle being pushed",
+      "bbox_xyxy": [238, 239, 333, 283]
+    },
+    "train:3880": {
+      "proposed_text": "The black sedan on the right side of the road",
+      "bbox_xyxy": [602, 204, 640, 310]
+    },
+    "train:3935": {
+      "proposed_text": "The rightmost bicycle",
+      "bbox_xyxy": [535, 251, 640, 333]
+    },
+    "train:3968": {
+      "proposed_text": "The bicycle ridden by the person wearing yellow"
+    },
+    "train:4031": {
+      "proposed_text": "The bicycle ridden by the child wearing a blue helmet",
+      "bbox_xyxy": [368, 251, 481, 323]
+    },
+    "train:4177": {
+      "proposed_text": "The bicycle at the end of the line",
+      "bbox_xyxy": [522, 265, 602, 341]
+    },
+    "train:4242": {
+      "proposed_text": "The bicycle traveling on the road"
+    },
+    "train:4387": {
+      "proposed_text": "The bicycle being pushed",
+      "bbox_xyxy": [52, 235, 134, 280]
+    },
+    "train:4427": {
+      "proposed_text": "The bicycle on the sidewalk"
+    },
+    "train:4430": {
+      "proposed_text": "The bicycle traveling on the right side of the road",
+      "bbox_xyxy": [467, 254, 579, 327]
+    },
+    "train:4510": {
+      "proposed_text": "The bicycle beneath the traffic light",
+      "bbox_xyxy": [466, 216, 532, 260]
+    },
+    "train:4558": {
+      "proposed_text": "The bicycle on the right side of the road",
+      "bbox_xyxy": [518, 249, 640, 340]
+    },
+    "train:4684": {
+      "proposed_text": "The bicycle on the right side of the road"
+    },
+    "train:4855": {
+      "proposed_text": "The bicycle parked on the grass"
+    },
+    "train:4868": {
+      "proposed_text": "The bicycle on the road"
+    },
+    "train:4917": {
+      "proposed_text": "The bicycle ridden by the person wearing a black top",
+      "bbox_xyxy": [338, 255, 357, 285]
+    },
+    "train:5010": {
+      "proposed_text": "The bicycle traveling on the left side of the road"
+    },
+    "train:5017": {
+      "proposed_text": "The bicycle ridden by the person wearing a red helmet",
+      "bbox_xyxy": [245, 246, 423, 371]
+    },
+    "train:5179": {
+      "proposed_text": "The elderly person on the left side of the road"
+    },
+    "train:5372": {
+      "proposed_text": "The second bicycle from the right",
+      "bbox_xyxy": [319, 249, 439, 320]
+    },
+    "train:5420": {
+      "proposed_text": "The bicycle on the right side of the road, partially occluded by the utility pole"
+    },
+    "train:5550": {
+      "proposed_text": "The bicycle farther to the right"
+    },
+    "train:5556": {
+      "proposed_text": "The bicycle parked under the tree"
+    },
+    "train:5576": {
+      "proposed_text": "The red car",
+      "bbox_xyxy": [177, 204, 225, 250]
+    },
+    "train:5829": {
+      "proposed_text": "The car parked on the right side of the road",
+      "bbox_xyxy": [441, 218, 556, 276]
+    },
+    "train:5931": {
+      "proposed_text": "The bicycle stopped beneath the traffic light"
+    },
+    "train:5932": {
+      "proposed_text": "The bicycle traveling on the road"
+    },
+    "train:5984": {
+      "proposed_text": "The bicycle traveling on the road"
+    },
+    "train:5991": {
+      "proposed_text": "The bicycle on the left side of the road"
+    },
+    "train:6016": {
+      "proposed_text": "The bicycle traveling in the middle of the road",
+      "bbox_xyxy": [337, 270, 474, 342]
+    },
+    "train:6114": {
+      "proposed_text": "The rightmost silver car",
+      "bbox_xyxy": [429, 212, 640, 327]
+    },
+    "train:6228": {
+      "proposed_text": "The bicycle on the right"
+    },
+    "train:6356": {
+      "proposed_text": "The white car on the left side of the image",
+      "bbox_xyxy": [0, 208, 82, 257]
+    },
+    "train:6579": {
+      "proposed_text": "The bicycle crossing the road",
+      "bbox_xyxy": [304, 248, 416, 320]
+    },
+    "train:6588": {
+      "proposed_text": "The car parked on the right side of the road",
+      "bbox_xyxy": [530, 220, 638, 300]
+    },
+    "train:6593": {
+      "proposed_text": "The bicycle traveling in the distance"
+    },
+    "train:6634": {
+      "proposed_text": "The bicycle on the right side of the image"
+    },
+    "train:6790": {
+      "proposed_text": "The bicycle being pushed",
+      "bbox_xyxy": [323, 240, 404, 284]
+    },
+    "train:6822": {
+      "proposed_text": "The bicycle parked on the left side of the road"
+    },
+    "train:6985": {
+      "proposed_text": "The bicycle being ridden",
+      "bbox_xyxy": [380, 276, 422, 348]
+    },
+    "val:10": {
+      "proposed_text": "The bicycle on the right",
+      "bbox_xyxy": [493, 245, 612, 332]
+    },
+    "train:6972": {
+      "proposed_text": "The bicycle being pushed",
+      "bbox_xyxy": [215, 239, 286, 280]
+    },
+    "val:12": {
+      "proposed_text": "The bicycle crossing the road",
+      "bbox_xyxy": [195, 258, 305, 337]
+    },
+    "val:64": {
+      "proposed_text": "The bicycle parked by the roadside"
+    },
+    "val:123": {
+      "proposed_text": "The second bicycle from the right",
+      "bbox_xyxy": [271, 248, 371, 324]
+    },
+    "val:260": {
+      "proposed_text": "The bicycle crossing the road",
+      "bbox_xyxy": [254, 260, 365, 317]
+    },
+    "val:280": {
+      "proposed_text": "The bicycle on the right side of the road",
+      "bbox_xyxy": [491, 253, 614, 335]
+    },
+    "val:340": {
+      "proposed_text": "The second bicycle from the right",
+      "bbox_xyxy": [323, 260, 435, 329]
+    },
+    "val:398": {
+      "proposed_text": "The bicycle ridden by the child wearing a black hat",
+      "bbox_xyxy": [176, 235, 277, 294]
+    },
+    "val:453": {
+      "proposed_text": "The bicycle ridden by the young boy wearing an orange top",
+      "bbox_xyxy": [112, 252, 294, 340]
+    }
+  }
+}

@@ -1,0 +1,135 @@
+ 
+
+
+
+1、使用已有模型推理
+    
+    （1）下载文本编码器，并修改_base_ = '../grounding_dino_swin-t_pretrain_obj365.py'里的lang_model_name为文件路径
+    （2）下载grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth模型权重放置在checkpoints文件夹下
+    （3）执行命令行
+
+    python demo/image_demo.py data/F/vis/2269.jpg \
+        configs/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det.py \
+        --weights checkpoints/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth \
+        --texts 'the orange' \
+        --tokens-positive -1
+
+python demo/image_demo.py data/F/ir/2269.jpg \
+        workdir/flir/ir/all/groundingdino_rgbtvg_flir_ir_224_train/grounding_dino_swin-t_finetune_rgbtvg_flir_ir_224.py \
+        --weights workdir/flir/ir/all/groundingdino_rgbtvg_flir_ir_224_train/epoch_5.pth \
+        --texts 'the orange' \
+        --tokens-positive -1
+
+python demo/image_demo.py data/F/vis/2269.jpg \
+        workdir/flir/rgb/all/groundingdino_rgbtvg_flir_rgb_224_train/grounding_dino_swin-t_finetune_rgbtvg_flir_rgb_224.py \
+        --weights workdir/flir/rgb/all/groundingdino_rgbtvg_flir_rgb_224_train/epoch_5.pth \
+        --texts 'the orange' \
+        --tokens-positive -1
+
+
+2.构建自己的数据集
+    编写mmdetection/tools/dataset_converters/rgbtvg2mmgroundingdino.py实现数据集格式转化
+
+    训练集
+    
+    
+    python \
+    tools/dataset_converters/rgbtvg2mmgroundingdino.py \
+    data/RGBT_Ground_Dataset/rgbtvg_mfad/rgbtvg_mfad_train.pth \
+    --output-dir data/MFAD/annotations \
+    --image-dir data/MFAD/vis\
+    --split train \
+    --dataset-prefix rgbtvg_mfad \
+    --generate-train-vg
+
+    验证集
+
+    python \
+    tools/dataset_converters/rgbtvg2mmgroundingdino.py \
+    data/RGBT_Ground_Dataset/rgbtvg_mfad/rgbtvg_mfad_val.pth \
+    --output-dir data/MFAD/annotations \
+    --image-dir data/MFAD/vis\
+    --split val \
+    --dataset-prefix rgbtvg_mfad 
+   
+
+    
+    测试集
+
+    python \
+    tools/dataset_converters/rgbtvg2mmgroundingdino.py \
+    data/RGBT_Ground_Dataset/rgbtvg_mfad/rgbtvg_mfad_testC.pth \
+    --output-dir data/MFAD/annotations \
+    --image-dir data/MFAD/vis\
+    --split testC \
+    --dataset-prefix rgbtvg_mfad 
+   
+
+    编写tools/check_rgbtvg_dataset.py文件检查转化后文件
+
+3.编写自己配置文件
+    创建文件夹configs/mm_grounding_dino/myself
+    在该文件夹中编写配置文件
+
+    测试
+    python tools/test.py \
+    configs/mm_grounding_dino/myself/grounding_dino_swin-t_finetune_rgbtvg_flir_rgb.py \
+    checkpoints/grounding_dino_swin-t_pretrain_obj365_goldg_grit9m_v3det_20231204_095047-b448804b.pth \
+    --work-dir workdir/rgbtvg_flir_rgb_zeroshot
+
+ 
+    训练
+    
+
+
+PORT=29530 \
+CUDA_VISIBLE_DEVICES=0,1 \
+PYTORCH_ALLOC_CONF=expandable_segments:True \
+bash tools/dist_test.sh \
+configs/mm_grounding_dino/myself/mfad/grounding_dino_swin-t_finetune_rgbtvg_mfad_multimodal_competitive_learned_query_train50.py \
+workdir/mfad/multimodal/competitive_learned_query/groundingdino_rgbtvg_mfad_multimodal_competitive_learned_query_train50/epoch_50.pth \
+2 \
+--work-dir \
+workdir/mfad/multimodal/competitive_learned_query/groundingdino_rgbtvg_mfad_multimodal_competitive_learned_query_test_epoch50
+
+
+PORT=29539 \
+CUDA_VISIBLE_DEVICES=0,1 \
+PYTORCH_ALLOC_CONF=expandable_segments:True \
+bash tools/dist_test.sh \
+configs/mm_grounding_dino/myself/flir/multimodal/grounding_dino_swin-t_finetune_rgbtvg_flir_multimodal_dual_backbone_full_finetune_base.py \
+workdir/flir/multimodal/dual_backbone_base/groundingdino_rgbtvg_flir_multimodal_dual_backbone_full_finetune_base_train50/epoch_50.pth \
+2 \
+--work-dir \
+workdir/flir/multimodal/dual_backbone_base/groundingdino_rgbtvg_flir_multimodal_dual_backbone_full_finetune_base_test_epoch50
+
+
+分析topk
+python tools/analysis_tools/analyze_multimodal_topk.py \
+  configs/mm_grounding_dino/myself/flir/multimodal/grounding_dino_swin-t_finetune_rgbtvg_flir_multimodal_competitive_shared_encoder_learned_query.py \
+  workdir/flir/multimodal/competitive_shared_encoder_learned_query/groundingdino_rgbtvg_flir_multimodal_competitive_shared_encoder_learned_query_train/epoch_50.pth \
+  --out-dir workdir/flir/multimodal/competitive_shared_encoder_learned_query/topk_analysis_epoch50 \
+  --iou-thresholds 0.8 \
+  --device cuda:0
+双卡
+torchrun --standalone --nproc-per-node=2 \
+  tools/analysis_tools/analyze_multimodal_topk.py \
+  configs/mm_grounding_dino/myself/flir/multimodal/grounding_dino_swin-t_finetune_rgbtvg_flir_multimodal_competitive_shared_encoder_learned_query.py \
+  workdir/flir/multimodal/competitive_shared_encoder_learned_query/groundingdino_rgbtvg_flir_multimodal_competitive_shared_encoder_learned_query_train/epoch_50.pth \
+  --out-dir workdir/flir/multimodal/competitive_shared_encoder_learned_query/topk_analysis_epoch50_2gpu \
+  --iou-thresholds 0.8 \
+  --launcher pytorch \
+  2>&1 | tee workdir/flir/multimodal/competitive_shared_encoder_learned_query/topk_analysis_epoch50_2gpu.log
+
+
+
+  
+PORT=29512 \
+CUDA_VISIBLE_DEVICES=0,1 \
+PYTORCH_ALLOC_CONF=expandable_segments:True \
+bash tools/dist_test.sh \
+workdir/m3fd/multimodal/dual_backbone_base_post_encoder_eah/groundingdino_rgbtvg_m3fd_multimodal_dual_backbone_base_post_encoder_eah_train/grounding_dino_swin-t_finetune_rgbtvg_m3fd_multimodal_dual_backbone_full_finetune_base_post_encoder_eah.py \
+workdir/m3fd/multimodal/dual_backbone_base_post_encoder_eah/groundingdino_rgbtvg_m3fd_multimodal_dual_backbone_base_post_encoder_eah_train/epoch_48.pth \
+2 \
+--work-dir \
+workdir/m3fd/multimodal/dual_backbone_base_post_encoder_eah/groundingdino_rgbtvg_m3fd_multimodal_dual_backbone_base_post_encoder_eah_test_epoch48

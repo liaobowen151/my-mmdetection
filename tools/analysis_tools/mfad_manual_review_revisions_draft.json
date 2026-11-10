@@ -1,0 +1,17 @@
+{
+  "status": "visualization_draft_only",
+  "note": "Do not write these proposals to MFAD annotations until the user confirms the revised visualizations.",
+  "revisions": {
+    "1": {"proposed_text": "The small white car beside the greenery", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "2": {"proposed_text": "The bus on the opposite side of the road", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "5478": {"proposed_text": "The large white truck on the road", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "5902": {"bbox_xyxy": [1160, 478, 1279, 655], "proposed_text": "The white notice board on the right", "reason": "User-proposed box and English referent text; source annotations remain unchanged."},
+    "6198": {"bbox_xyxy": [1178, 486, 1279, 742], "proposed_text": "The red building at the far right", "reason": "User-proposed box and English referent text; source annotations remain unchanged."},
+    "13496": {"proposed_text": "The pedestrian in the center of the image", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "15255": {"proposed_text": "The white coach bus with only its rear visible", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "15518": {"proposed_text": "The vehicle on the left", "reason": "User-proposed English referent text; source annotations remain unchanged."},
+    "15778": {"bbox_xyxy": [23, 650, 70, 778], "proposed_text": "The pedestrian wearing blue", "reason": "User-proposed box and English referent text; source annotations remain unchanged."},
+    "15841": {"bbox_xyxy": [470, 548, 535, 680], "proposed_text": "The person riding the electric bicycle", "reason": "The referent is the person riding the electric bicycle; source annotations remain unchanged."},
+    "15842": {"bbox_xyxy": [470, 548, 535, 680], "proposed_text": "The person riding the electric bicycle", "reason": "The referent is the person riding the electric bicycle; source annotations remain unchanged."}
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "status": "visualization_preview_only_not_applied_to_source_annotations",
+  "assumptions": [
+    "The user's second reference to test_00002 is interpreted as test_00003, as confirmed by the user."
+  ],
+  "revisions": {
+    "test:2": {"proposed_text": "The truck on the road"},
+    "test:3": {"proposed_text": "The white car partially blocking the bus"},
+    "test:4": {"proposed_text": "The bus partially blocked by the car"},
+    "test:320": {"proposed_text": "The coach bus in the distance on the road"},
+    "test:770": {"proposed_text": "The pedestrian next to the bus"},
+    "test:894": {
+      "proposed_text": "The rightmost electric bicycle",
+      "bbox_xyxy": [735, 744, 868, 867]
+    },
+    "test:944": {"proposed_text": "The person riding the electric bicycle"},
+    "test:1751": {
+      "proposed_text": "The person holding an umbrella on the left side of the image",
+      "bbox_xyxy": [524, 495, 573, 574]
+    },
+    "test:2517": {"proposed_text": "The truck on the right side of the image"},
+    "test:2560": {
+      "proposed_text": "The tallest building in the image",
+      "bbox_xyxy": [626, 69, 716, 445]
+    },
+    "test:2651": {
+      "proposed_text": "The person riding the electric bicycle",
+      "bbox_xyxy": [205, 524, 311, 686]
+    },
+    "test:3605": {
+      "proposed_text": "The white car",
+      "bbox_xyxy": [743, 743, 842, 823]
+    },
+    "test:4074": {
+      "proposed_text": "The white car",
+      "bbox_xyxy": [672, 746, 738, 817]
+    },
+    "val:772": {"proposed_text": "The small white truck in the distance"},
+    "val:984": {
+      "proposed_text": "The person riding the white electric bicycle",
+      "bbox_xyxy": [275, 705, 430, 865]
+    },
+    "val:1026": {"proposed_text": "The coach bus in the distance"}
+  }
+}
